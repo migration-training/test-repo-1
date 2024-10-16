@@ -12,10 +12,7 @@ on:
 
 jobs:
   call-another-workflow:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Call Workflow from Another Repository
-        uses: migration-training/test-repo-2/.github/workflows/target-workflow.yml@main
-        with:
-          parameter1: ${{ github.event.inputs.parameter1 }}
-          parameter2: ${{ github.event.inputs.parameter2 }}
+    uses: abz/github-maven-app/.github/workflows/target-workflow.yml@main
+    with:
+      parameter1: ${{ github.event.inputs.parameter1 }}
+      parameter2: ${{ github.event.inputs.parameter2 }}
